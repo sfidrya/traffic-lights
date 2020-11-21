@@ -1,0 +1,33 @@
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: #bbb;
+  border: 1px solid black; 
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px; 
+}
+
+.red {
+  background-color: red;
+}
+
+.redOff {
+  background-color: #5c0a0a;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.yellowOff {
+  background-color: #894a06;
+}
+
+.green {
+  background-color: #00cc00;
+}
+
+.greenOff {
+  background-color: #112702;
+}
