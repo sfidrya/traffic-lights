@@ -37,13 +37,16 @@ export const LightCheckbox = ({isBlinking, onIsBlinkingChange}: LightCheckboxPro
     onIsBlinkingChange(event.target.checked)
   }, [onIsBlinkingChange])
   return (
-    <input
-      type="checkbox"
-      name="lightCheckBox"
-      id="CheckBlink"
-      checked={isBlinking}
-      onChange={handleChange}
-    />
+    <label>
+      <input
+        type="checkbox"
+        name="lightCheckBox"
+        id="CheckBlink"
+        checked={isBlinking}
+        onChange={handleChange}
+      />
+      is blinking
+    </label>
   )
 }
 
