@@ -1,23 +1,26 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 //import './trafficLightsAll.css';
 import {TrafficLights} from './trafficLights'
-import {LightMenu} from './menu'
+import {LightMenu} from './menu/LightMenu'
 import type {Color} from './typeColor'
 
 
 export const TrafficLightsAll = () => {
   const [activeColor, setActiveColor] = useState<Color>("red")
   const [isBlinking, setIsBlinking] = useState(false)
-  
+  const [isAutoSwitch, setIsAutoSwitch] = useState(false)
 
-  const handleActiveColorChange = (newValue: Color) => {
+  const handleActiveColorChange = useCallback((newValue: Color) => {
     setActiveColor(newValue)
-  }
+  }, [])
 
-  const handleIsBlinkingChange = (newValue: boolean) => {
+  const handleIsBlinkingChange = useCallback((newValue: boolean) => {
     setIsBlinking(newValue)
-  }
+  }, [])
 
+  const handleIsAutoSwitchChange = useCallback((newValue: boolean) => {
+    setIsAutoSwitch(newValue)
+  }, [])
 
   return (
     <>
@@ -25,8 +28,10 @@ export const TrafficLightsAll = () => {
       <LightMenu 
         activeColor={activeColor} 
         isBlinking={isBlinking} 
-        onActiveColorChange={handleActiveColorChange} 
+        isAutoSwitch={isAutoSwitch}
+        onIsActiveColorChange={handleActiveColorChange} 
         onIsBlinkingChange={handleIsBlinkingChange}
+        onIsAutoSwitchChange={handleIsAutoSwitchChange}
       />
     </>
   )
