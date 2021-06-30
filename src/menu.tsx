@@ -3,7 +3,7 @@ import type {Color} from './typeColor'
 import './menu.css'
 
 interface LightSelectProps{
-  activeColor: Color; 
+  activeColor: Color | 'none'; 
   onActiveColorChange: (newValue: Color) => void;
 }
 

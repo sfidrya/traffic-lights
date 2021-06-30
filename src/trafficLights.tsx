@@ -4,7 +4,7 @@ import {LightBlinking, LightMode} from './lights'
 import type {Color} from './typeColor'
 
 interface trafficLightsProps {
-  activeColor: Color; 
+  activeColor: Color | 'none'; 
   isBlinking: boolean; 
 }
 

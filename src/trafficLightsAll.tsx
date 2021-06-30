@@ -6,7 +6,7 @@ import type {Color} from './typeColor'
 
 
 export const TrafficLightsAll = () => {
-  const [activeColor, setActiveColor] = useState<Color>("red")
+  const [activeColor, setActiveColor] = useState<Color | 'none'>('red')
   const [isBlinking, setIsBlinking] = useState(false)
   
 
