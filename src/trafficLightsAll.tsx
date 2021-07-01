@@ -24,10 +24,10 @@ export const TrafficLightsAll = () => {
     }
     if (isAutoSwitch) {
       const autoSwitchTimer = setTimeout(autoSwitch, 3000)
-     /* return function cleanup() {
+      return function cleanup() {
         clearTimeout(autoSwitchTimer)
         console.log('CLEARED TIMEOUT')
-      }*/
+      }
     } 
   }
   , 
