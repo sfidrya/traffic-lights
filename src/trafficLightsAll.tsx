@@ -20,11 +20,17 @@ export const TrafficLightsAll = () => {
   const [autoSwitchBlinking, setAutoSwitchBlinking] = useState(false)
   const [autoSwitchMode, setAutoSwitchMode] = useState<trafficLightsAutoMode> (trafficLightsAutoMode.redMode)
 
-  
+  function getDelay(mode: trafficLightsAutoMode) {
+    if (mode === trafficLightsAutoMode.greenBlinkingMode) {
+      return 4000
+    } else if (mode === trafficLightsAutoMode.redMode) {
+      return 5000
+    } else { 
+      return 3000
+    }
+  }   
 
   useEffect(() => {
-   
-
     function autoSwitch() {
       if (autoSwitchMode === trafficLightsAutoMode.greenMode) {
         setAutoSwitchMode(trafficLightsAutoMode.greenBlinkingMode)
@@ -43,12 +49,12 @@ export const TrafficLightsAll = () => {
         setAutoSwitchMode(trafficLightsAutoMode.greenMode)
         setAutoSwitchColor('green')
       }
-      
       console.log('autoSwitch worked')
     }
 
     if (isAutoSwitch) {
-      const autoSwitchTimer = setTimeout(autoSwitch, 3000)
+      const timerDelay = getDelay(autoSwitchMode)
+      const autoSwitchTimer = setTimeout(autoSwitch, timerDelay)
       return function cleanup() {
         clearTimeout(autoSwitchTimer)
         console.log('CLEARED TIMEOUT')
